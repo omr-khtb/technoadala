@@ -98,7 +98,7 @@ class MyApp extends StatelessWidget {
                         child: Column(
                           children: [SizedBox(height: 60,),
                             _buildTextFieldContainer(
-                              hintText: 'رسوم',
+                              hintText: 'رسوم                                                  ',
                               iconPath: 'assets/invoice.png',
                               iconSize: 40,
                               onPressed: () {
@@ -109,7 +109,7 @@ class MyApp extends StatelessWidget {
                             ),
                             SizedBox(height: 47,),
                             _buildTextFieldContainer(
-                              hintText: 'مصاريف المكتب',
+                              hintText: 'مصاريف المكتب                              ',
                               iconPath: 'assets/tax.png',
                               iconSize: 40,
                               onPressed: () {
@@ -118,7 +118,7 @@ class MyApp extends StatelessWidget {
                               },
                             ), SizedBox(height: 47,),
                             _buildTextFieldContainer(
-                              hintText: 'تحصيل الأموال',
+                              hintText: 'تحصيل الأموال                                ',
                               iconPath: 'assets/getmoney.png',
                               iconSize: 40,
                               onPressed: () {
@@ -293,7 +293,6 @@ class MyApp extends StatelessWidget {
             child: TextButton(
               onPressed: onPressed,
               style: ButtonStyle(
-                alignment: Alignment.centerRight,
               ),
               child: Text(
                 hintText,
