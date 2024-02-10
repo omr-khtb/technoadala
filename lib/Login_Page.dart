@@ -136,11 +136,15 @@ class MyApp extends StatelessWidget {
                         ],
                       ),
                     ),
-
                   ),
                 ),
+
               ),
             ),
+            Positioned(
+              bottom: 4,
+                right: 10,
+                child: Image.asset('assets/logo.png',scale: 5,))
           ],
         ),
       ),
@@ -262,8 +266,8 @@ class MyApp extends StatelessWidget {
 
   Widget _buildSwitchButton(bool value, ValueChanged<bool> onChanged) {
     return Container(
-      width: 30.72,
-      height: 13.22,
+      width: 40,
+      height: 17.22,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
         border: Border.all(color: Colors.black),
@@ -275,8 +279,8 @@ class MyApp extends StatelessWidget {
             duration: Duration(milliseconds: 200),
             left: value ? 17.5 : 0,
             child: Container(
-              width: 9.96,
-              height: 9.92,
+              width: 14,
+              height: 13.94,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.black,
