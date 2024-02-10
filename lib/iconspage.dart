@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
                 fit: StackFit.expand,
                 children: [
                   Image.asset(
-                    'assets/new.png',
+                    'assets/appbar_v2.png',
                     fit: BoxFit.fitWidth,
                   ),
                   Positioned(

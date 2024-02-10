@@ -64,16 +64,24 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  fonts:
+    - family: Almarai
+      fonts:
+        - asset: assets/Almarai-Regular.ttf
   assets:
-    - assets/appbar.png
     - assets/justice.png
-    - assets/new.png
+    - assets/appbar_v2.png
     - assets/search-alt.png
     - assets/calendar-day.png
     - assets/dollar.png
     - assets/users-alt.png
     - assets/briefcase.png
     - assets/enterprise.png
+    - assets/appbarv3.png
+    - assets/newbar.png
+    - assets/whitejustice.png
+    - assets/person.png
+    - assets/key.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
