@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:techno3adalaa/Login_Page.dart';
 import 'firebase_options.dart';
 
 void main() {
  // Firebase.initializeApp(
 //    options: DefaultFirebaseOptions.currentPlatform,
 // );
-  runApp(MyApp());
+  runApp(const MyApp());
   
 }
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Login',
       theme: ThemeData(primarySwatch: Colors.blue),
+      home: const LoginPage(),
     );
   }
 }

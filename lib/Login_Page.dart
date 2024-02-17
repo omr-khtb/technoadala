@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-void main() {
-  runApp(MyApp());
-}
 
-class MyApp extends StatelessWidget {
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
+
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.black,
     ));
     return MaterialApp(
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.white, // Change background color to white
         extendBody: true,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(338),
+          preferredSize: const Size.fromHeight(338),
           child: AppBar(
             elevation: 0,
             backgroundColor: Colors.transparent,
@@ -30,7 +29,7 @@ class MyApp extends StatelessWidget {
                     'assets/newbar.png',
                     fit: BoxFit.fitWidth,
                   ),
-                  Positioned(
+                  const Positioned(
                     bottom: 160, // Adjusted to center vertically
                     right: 107,
                     child: Column(
@@ -72,7 +71,7 @@ class MyApp extends StatelessWidget {
                           iconPath: 'assets/person.png',
                           iconSize: 40,
                         ),
-                        SizedBox(height: 35),
+                        const SizedBox(height: 35),
                         _buildTextFieldContainerWithButton(
                           hintText: 'كلمة المرور',
                           iconPath: 'assets/key.png',
@@ -109,14 +108,14 @@ class MyApp extends StatelessWidget {
                   width: 174,
                   height: 50,
                   decoration: BoxDecoration(
-                    color: Color(0xFFF5F5F5), // Set background color
+                    color: const Color(0xFFF5F5F5), // Set background color
                     borderRadius: BorderRadius.circular(25),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.withOpacity(0.5), // Set shadow color
                         spreadRadius: 2,
                         blurRadius: 5,
-                        offset: Offset(0, 3), // changes position of shadow
+                        offset: const Offset(0, 3), // changes position of shadow
                       ),
                     ],
                   ),
@@ -130,7 +129,7 @@ class MyApp extends StatelessWidget {
                         shadows: [
                           Shadow(
                             color: Colors.grey.withOpacity(0.9),
-                            offset: Offset(2, 2),
+                            offset: const Offset(2, 2),
                             blurRadius: 4,
                           ),
                         ],
@@ -161,14 +160,14 @@ class MyApp extends StatelessWidget {
       width: 332,
       height: 76,
       decoration: BoxDecoration(
-        color: Color(0xFFF5F5F5), // Set background color
+        color: const Color(0xFFF5F5F5), // Set background color
         borderRadius: BorderRadius.circular(25),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5), // Set shadow color
             spreadRadius: 2,
             blurRadius: 5,
-            offset: Offset(0, 3), // changes position of shadow
+            offset: const Offset(0, 3), // changes position of shadow
           ),
         ],
       ),
@@ -183,13 +182,13 @@ class MyApp extends StatelessWidget {
               textAlign: TextAlign.right,
               decoration: InputDecoration(
                 hintText: hintText,
-                hintStyle: TextStyle(
+                hintStyle: const TextStyle(
                   fontFamily: 'Almarai',
                   fontSize: 18,
                   color: Colors.black,
                 ),
                 border: InputBorder.none,
-                contentPadding: EdgeInsets.symmetric(horizontal: 16),
+                contentPadding: const EdgeInsets.symmetric(horizontal: 16),
               ),
               obscureText: isObscureText,
             ),
@@ -219,7 +218,7 @@ class MyApp extends StatelessWidget {
           iconSize: iconSize,
           isObscureText: isObscureText,
         ),
-        SizedBox(height: 30),
+        const SizedBox(height: 30),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -228,14 +227,14 @@ class MyApp extends StatelessWidget {
                 GestureDetector(
                   onTap: onLeftButtonPressed,
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
 
                   ),
                 ),
                 _buildSwitchButton(switchValue, onSwitchChanged),
                 Text(
                   leftButtonText,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.black,
                     fontSize: 17,
                     fontFamily: 'Almarai',
@@ -246,10 +245,10 @@ class MyApp extends StatelessWidget {
             GestureDetector(
               onTap: onRightButtonPressed,
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
                   rightButtonText,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.black,
                     fontSize: 17,
                     fontFamily: 'Almarai',
@@ -276,12 +275,12 @@ class MyApp extends StatelessWidget {
       child: Stack(
         children: [
           AnimatedPositioned(
-            duration: Duration(milliseconds: 200),
+            duration: const Duration(milliseconds: 200),
             left: value ? 17.5 : 0,
             child: Container(
               width: 14,
               height: 13.94,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.black,
               ),
