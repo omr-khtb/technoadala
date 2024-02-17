@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "561268462442",
+    "project_id": "technoadala",
+    "storage_bucket": "technoadala.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561268462442:android:a3657bb91d293d69fe8b13",
+        "android_client_info": {
+          "package_name": "com.example.technoadala"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2Uplj3VIvzS3BU_KpxV9rj9sliLSNhaw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
