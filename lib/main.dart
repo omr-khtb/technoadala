@@ -1,45 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:techno3adalaa/Login_Page.dart';
+import 'firebase_options.dart';
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Login',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: LoginPage(),
-    );
-  }
-}
-
-class LoginPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Login'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            saveData(context); // Call saveData with BuildContext
-          },
-          child: Text('Save Data'),
-        ),
-      ),
-    );
-  }
-}
-
-Future<void> saveData(BuildContext context) async {
+Future<void> saveData() async {
   try {
     // Access Firestore instance
     FirebaseFirestore firestore = FirebaseFirestore.instance;
@@ -55,22 +26,22 @@ Future<void> saveData(BuildContext context) async {
     print('Document saved to Firestore!');
   } catch (e) {
     print('Error saving document: $e');
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Error'),
-          content: Text('Failed to save document: $e'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: Text('OK'),
-            ),
-          ],
-        );
-      },
+  }
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // Call saveData() after Firebase has been initialized
+    saveData();
+
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Login',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: const LoginPage(),
     );
   }
 }
