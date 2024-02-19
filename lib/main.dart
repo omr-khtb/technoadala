@@ -6,7 +6,10 @@ import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+);
+ // await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -36,7 +39,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // Call saveData() after Firebase has been initialized
     saveData();
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Login',
