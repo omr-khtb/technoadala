@@ -17,10 +17,8 @@ Future<void> saveData() async {
   try {
     // Access Firestore instance
     FirebaseFirestore firestore = FirebaseFirestore.instance;
-
     // Reference to the "first" collection
     CollectionReference collectionReference = firestore.collection('first');
-
     // Add a new document with a generated ID
     await collectionReference.add({
       'two': 'two',
