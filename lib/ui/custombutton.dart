@@ -6,102 +6,75 @@ class CustomButton extends StatelessWidget {
   final String iconPath;
   final String text;
   final String details;
-  final Color backgroundColor;
-
-
-
-
+  final VoidCallback onPressed; // Added onPressed callback
 
   const CustomButton({
     required this.iconPath,
     required this.text,
     required this.details,
-    required this.backgroundColor,
-
+    required this.onPressed, // Accept onPressed callback as a parameter
   });
 
   @override
   Widget build(BuildContext context) {
     Color myColor = Color(0xFF5E5E5E);
+    Color backgroundColor = Color(0xFF4F97EA);
 
     return Column(
-
       children: [
-        Row(children:[
-        Padding(
-          padding: EdgeInsets.all(5.0),
-          child: GestureDetector(
-            onTap: () {
-              // Handle button tap
-            },
-            child: Container(
-              width: 100,
-              height: 100,
-              decoration: BoxDecoration(
-                color: backgroundColor,
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    text,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
+        Row(
+          children: [
+             GestureDetector(
+                onTap: onPressed, // Call onPressed callback when tapped
+                child: Container(
+                  width: 80,
+                  height: 80,
+                  decoration: BoxDecoration(
+                    color: backgroundColor,
+                    borderRadius: BorderRadius.circular(12.0),
                   ),
-                  SizedBox(height: 1), // Add some spacing between text and icon
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
 
-                  // Center the icon
-                  Container(
-                    alignment: Alignment.center,
-                    child: Image.asset(
-                      iconPath,
-                      color: Colors.white,
-                      filterQuality: FilterQuality.high,
-                      height: 60, // Adjust the height as needed
-                      width: 60, // Adjust the width as needed
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                  SizedBox(height: 0), // Add some spacing between icon and details
 
-                  Text(
-                    text,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
-                    ),
+                      // Center the icon
+                      Container(
+                        alignment: Alignment.center,
+                        child: Image.asset(
+                          iconPath,
+                          color: Colors.white,
+                          filterQuality: FilterQuality.high,
+                          height: 46, // Adjust the height as needed
+                          width: 46, // Adjust the width as needed
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+
+
+                    ],
                   ),
-                ],
+                ),
               ),
-            ),
-          ),
+
+          ],
         ),
-        ]),
-
         Container(
-          width: 125,
-          height: 50, // Set the desired height
+          width: 106,
+          height: 40, // Set the desired height
           child: Center(
             child: Text(
               details,
               textAlign: TextAlign.center, // Align text to the center
-                style: GoogleFonts.almarai(
-                  fontSize: 21,
-                  fontWeight: FontWeight.w800,
-                  color: myColor,
-                ),
+              style: GoogleFonts.almarai(
+                fontSize: 16,
+                fontWeight: FontWeight.w800,
+                color: Colors.black,
+              ),
             ),
           ),
         ),
-
-
-
       ],
-
     );
-  }}
-
-
+  }
+}

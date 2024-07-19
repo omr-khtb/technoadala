@@ -43,6 +43,13 @@ dependencies:
   google_fonts: ^6.1.0
   firebase_core: ^2.24.2
   cloud_firestore: ^4.9.2
+  cached_network_image: ^3.3.0
+  flutter_svg: ^2.0.9
+  flutter_svg_provider: ^1.0.7
+  intl: ^0.18.0
+  pinput: ^2.2.11
+  responsive_framework: ^1.4.0
+  percent_indicator: ^4.2.3
 
 
 
@@ -72,23 +79,7 @@ flutter:
       fonts:
         - asset: assets/Almarai-Regular.ttf
   assets:
-    - assets/justice.png
-    - assets/appbar_v2.png
-    - assets/search-alt.png
-    - assets/calendar-day.png
-    - assets/dollar.png
-    - assets/users-alt.png
-    - assets/briefcase.png
-    - assets/enterprise.png
-    - assets/appbarv3.png
-    - assets/newbar.png
-    - assets/whitejustice.png
-    - assets/person.png
-    - assets/key.png
-    - assets/logo.png
-    - assets/tax.png
-    - assets/getmoney.png
-    - assets/invoice.png
+    - assets/
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

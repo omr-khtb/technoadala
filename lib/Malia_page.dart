@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:techno3adalaa/Optionspage.dart';
+import 'package:techno3adalaa/rosom.dart';
+import 'package:techno3adalaa/ui/bottombar.dart';
 import 'package:techno3adalaa/ui/custombutton.dart';
 import 'package:flutter/services.dart'; // Import SystemChrome
 
-void main() {
-  runApp(MyApp());
+class Malia_page extends StatefulWidget {
+  @override
+  _Malia_pageState createState() => _Malia_pageState();
 }
 
-class MyApp extends StatelessWidget {
+class _Malia_pageState extends State<Malia_page> {
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -20,7 +25,7 @@ class MyApp extends StatelessWidget {
 
         extendBody: true,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(210),
+          preferredSize: Size.fromHeight(233),
           child: AppBar(
             elevation: 0,
             backgroundColor: Colors.transparent,
@@ -33,8 +38,8 @@ class MyApp extends StatelessWidget {
                     fit: BoxFit.fitWidth,
                   ),
                   Positioned(
-                    bottom: 60,
-                    left: 12,
+                    bottom: 80,
+                    left: 20,
                     child: CircleAvatar(
                       backgroundImage: AssetImage('assets/justice.png'),
                       backgroundColor: Colors.transparent,
@@ -42,12 +47,12 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    bottom: 106,
-                    right: 16,
+                    bottom: 190,
+                    right: 169,
                     child: Text(
-                      "مؤمن أواب على",
+                      "المالية",
                       style: GoogleFonts.almarai(
-                          fontSize: 25,
+                          fontSize: 28,
                           color: Colors.white
 
                       ),
@@ -55,34 +60,71 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    bottom: 66,
+                    bottom: 145,
                     right: 16,
                     child: Text(
-                      ":رقم القضية",
+                      "المحامي الدكتور: عبدالله مزيد سعد العازمي",
                       style: GoogleFonts.almarai(
-                          fontSize: 25,
+                          fontSize: 14,
+                          color: Colors.white
+
+                      ),
+
+                    ),
+                  ),Positioned(
+                    bottom: 145,
+                    right: 267,
+                    child: SizedBox(
+                      width: 18, // Adjust as needed
+                      height: 18,
+                      child:Image.asset(
+
+                        'assets/verifed.png',
+
+                      ),
+                    ),),
+                  Positioned(
+                    bottom: 116,
+                    right: 16,
+                    child: Text(
+                      "الموكل:  اشرف بدر خالد المحمدي ",
+                      style: GoogleFonts.almarai(
+                          fontSize: 15,
+                          color: Colors.white
+                      ),
+                    ),
+                  ), Positioned(
+                    bottom: 87,
+                    right: 16,
+                    child: Text(
+                      "L712-4997:كود القضية ",
+                      style: GoogleFonts.almarai(
+                          fontSize: 15,
                           color: Colors.white
                       ),
                     ),
                   ),
                   Positioned(
-                    bottom: 152,
+                    bottom: 189,
                     right: 14,
                     child: Icon(
                       Icons.mail_rounded,
                       color: Colors.white,
                       size: 40,
                     ),
-                  ),
-                  Positioned(
-                    bottom: 152,
-                    left: 14,
-                    child: Icon(
-                      Icons.arrow_back_ios_rounded,
-                      color: Colors.white,
-                      size: 40,
+                  ), Positioned(
+                    bottom: 179,
+                    left: 10,
+                    child: IconButton(
+                      icon:
+                      Icon(Icons.arrow_back_ios_rounded,
+                        color: Colors.white,
+                        size: 40,
+                      ), onPressed: () {
+                      Navigator.of(context).pushNamed('/optionspage');
+                    },
                     ),
-                  ),
+                  )
                 ],
               ),
             ),
@@ -98,30 +140,37 @@ class MyApp extends StatelessWidget {
                         child: Column(
                           children: [SizedBox(height: 60,),
                             _buildTextFieldContainer(
-                              hintText: 'رسوم',
+                              hintText: 'رسوم                                                  ',
                               iconPath: 'assets/invoice.png',
                               iconSize: 40,
                               onPressed: () {
-                                // Add your logic here that should execute when the button is pressed
-                                // For example, you can navigate to another screen or perform an action
+                                {
+                                  Navigator.of(context).pushNamed('/Rosoom');
+                                }
                               },
 
                             ),
                             SizedBox(height: 47,),
                             _buildTextFieldContainer(
-                              hintText: 'مصاريف المكتب',
-                              iconPath: 'assets/tax.png',
+                              hintText: 'مصاريف المكتب                              ',
+                              iconPath: 'assets/img_4.png',
                               iconSize: 40,
                               onPressed: () {
+                                {
+                                  Navigator.of(context).pushNamed('/Masaref');
+                                }
                                 // Add your logic here that should execute when the button is pressed
                                 // For example, you can navigate to another screen or perform an action
                               },
                             ), SizedBox(height: 47,),
                             _buildTextFieldContainer(
-                              hintText: 'تحصيل الأموال',
+                              hintText: 'تحصيل الأموال                                ',
                               iconPath: 'assets/getmoney.png',
                               iconSize: 40,
                               onPressed: () {
+                                {
+                                  Navigator.of(context).pushNamed('/Ta7sel');
+                                }
                                 // Add your logic here that should execute when the button is pressed
                                 // For example, you can navigate to another screen or perform an action
                               },
@@ -189,71 +238,9 @@ class MyApp extends StatelessWidget {
             ]),
 
 
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: Container(
-          height: 100,
-          width: 60,
-
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.3),
-                spreadRadius: 5,
-                blurRadius: 3,
-                offset: Offset(0, 1),
-              ),
-            ],
-          ),
-          child: Stack(
-            children: [
+        bottomNavigationBar: CustomBottomNavigationBar(), // Use the custom bottom navigation bar
 
 
-              Center(
-                child: FloatingActionButton(
-                  onPressed: () {
-                    // Handle the onPressed event for the floating button
-                  },
-                  backgroundColor: Colors.white,
-                  child: Icon(Icons.home, color: Colors.black),
-                ),
-              ),
-
-
-            ],
-          ),
-        ),
-        bottomNavigationBar: BottomAppBar(
-          color: Colors.black, // Set the bottom app bar color to black
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              IconButton(
-                icon: Icon(Icons.search, color: Colors.white, size: 35,),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.person_2_outlined, color: Colors.white, size: 35,),
-                onPressed: () {},
-              ), IconButton(
-                icon: Icon(Icons.search, color: Colors.black),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.add_box_outlined, color: Colors.white, size: 35,),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.notifications_none_outlined, color: Colors.white,
-                  size: 35,),
-                onPressed: () {},
-              ),
-            ],
-          ),
-        ),
       ),
     );
   }
@@ -293,7 +280,6 @@ class MyApp extends StatelessWidget {
             child: TextButton(
               onPressed: onPressed,
               style: ButtonStyle(
-                alignment: Alignment.centerRight,
               ),
               child: Text(
                 hintText,
